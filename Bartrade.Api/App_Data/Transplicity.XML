@@ -1,0 +1,485 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api</name>
+    </assembly>
+    <members>
+        <member name="T:Api.BundleConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.BundleConfig.RegisterBundles(System.Web.Optimization.BundleCollection)">
+            <summary>
+            
+            </summary>
+            <param name="bundles"></param>
+        </member>
+        <member name="T:Api.FilterConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            
+            </summary>
+            <param name="filters"></param>
+        </member>
+        <member name="T:Api.RouteConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            
+            </summary>
+            <param name="routes"></param>
+        </member>
+        <member name="T:Api.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Startup.OAuthOptions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Startup.PublicClientId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Startup.UserManagerFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Startup.ConfigureAuth(Owin.IAppBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:Api.Startup.Configuration(Owin.IAppBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:Api.UnityConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.UnityConfig.RegisterComponents">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Api.WebApiConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:Api.WebApiConfig.EnableCamelCaseJson(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Enables indented camelCase for ease of reading.
+            </summary>
+            <param name="config">HttpConfiguration for this api</param>
+        </member>
+        <member name="M:Api.WebApiConfig.ConfigureUnity(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Enables dependency injection
+            </summary>
+            <param name="config">HttpConfiguration for this api</param>
+        </member>
+        <member name="T:Api.Controllers.HomeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.HomeController.Index">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Controllers.LanguagesController">
+            <summary>
+            API to obtain different items and lists related to the Languages, e.g. Countries, Languages, etc.
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.#ctor(Services.Interfaces.ILanguagesService,Services.Interfaces.IGeoLocationService)">
+            <summary>
+            Constructor of the LanguagesController
+            </summary>
+            <param name="languageServices">To inject the languagesServices object</param>
+            <param name="geoLocationServices">To inject the geoLocationServices object</param>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.Get(System.String)">
+            <summary>
+            Obtain a LanguageDto object given its id
+            </summary>
+            <param name="id">The id of the language</param>
+            <returns>A LanguageDto object</returns>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.GetLanguage(System.String)">
+            <summary>
+            Obtain a LanguageDto object given its id
+            </summary>
+            <param name="id">The id of the language</param>
+            <returns>A LanguageDto object</returns>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.GetCombo(System.String)">
+            <summary>
+            Obtain a list of LanguageDto objects with the translations in the given iso language code
+            </summary>
+            <param name="id">The language to obtain the translations. E.g. en-US</param>
+            <returns>A list of LanguageDto objects</returns>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.GetInitialData(System.String)">
+            <summary>
+            Obtain the initial data: a list of Languages and a list of Countries
+            </summary>
+            <param name="id">The language to obtain the translations. E.g. en-US</param>
+            <returns>A list of Languages and Countries objects</returns>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.GetAllLanguagesByCharacterId(System.String)">
+            <summary>
+            Obtain a list of languages given its CharacterSetId
+            </summary>
+            <param name="id">The character set id </param>
+            <returns>A list of Language objects</returns>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.GetCountriesCombo(System.String)">
+            <summary>
+            Obtain a list of CountryDto objects with the translations in the given iso language code
+            </summary>
+            <param name="id">The language to obtain the translations. E.g. en-US</param>
+            <returns>A list of CountryDto objects</returns>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.GetCountry(System.String)">
+            <summary>
+            Obtain a CountryDto object given its id
+            </summary>
+            <param name="id">The Id of the Country to obtain. E.g. 134</param>
+            <returns>A CountryDto object</returns>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.GetEncodings">
+            <summary>
+            Obtain a queryable list of all encodings
+            </summary>
+            <returns>A list of CharacterSet objects</returns>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.GetEncoding(System.String)">
+            <summary>
+            Obtain a CharacterSet object given its id
+            </summary>
+            <param name="id">The id of the CharacterSet. E.g. 106</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.LanguagesController.GetEncodingByCode(System.String)">
+            <summary>
+            Obtain a CharacterSet object given its code
+            </summary>
+            <param name="id">The code of the CharacterSet. E.g. iso-8859-1</param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Controllers.UserProfileController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.#ctor(Services.Interfaces.ILanguagesService,Services.Interfaces.IUsersService,Services.Interfaces.IGeoLocationService)">
+            <summary>
+            
+            </summary>
+            <param name="languageServices"></param>
+            <param name="userProfileServices"></param>
+            <param name="geoLocationServices"></param>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.GetUserInfo">
+            <summary>
+            Gets the information of the current user (if logged in)
+            </summary>
+            <returns>The username and the provider</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.GetExternalLogin(System.String,System.String)">
+            <summary>
+            Login with an external provider
+            </summary>
+            <param name="provider"></param>
+            <param name="error"></param>
+            <returns>HTTP Code with result of the operation. 200 if successful</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.Logout">
+            <summary>
+            Logs out of the application (removes the cookie or valid token)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.ChangePassword(Domain.Data.Identity.ChangePasswordModel)">
+            <summary>
+            Changes the password of an user
+            </summary>
+            <param name="model">An object with the current password and the new and its confirmation</param>
+            <returns>HTTP Code with result of the operation. 200 if successful</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.SetPassword(Domain.Data.Identity.SetPasswordModel)">
+            <summary>
+            Sets the password of an user
+            </summary>
+            <param name="model">An object with the new password and its confirmation</param>
+            <returns>HTTP Code with result of the operation. 200 if successful</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.RecoverPassword(System.String)">
+            <summary>
+            Callback method when the user ask for a new password
+            </summary>
+            <param name="token">Unique token to locate the initial user request</param>
+            <returns>An object of the kind SetPasswordBindingModel with the username and the token</returns>
+            <exception cref="T:System.Web.Http.HttpResponseException"></exception>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.GetManageInfo(System.String,System.Boolean)">
+            <summary>
+            Returns all the information needed to manage the user info
+            </summary>
+            <param name="returnUrl">The url where to go after retrieving the data</param>
+            <param name="generateState"></param>
+            <returns>A list with all the Login Information about the user, like the logins (internal or external) associated to the current user</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.GetExternalLogins(System.String,System.Boolean)">
+            <summary>
+            Retrieve the list of External Logins availables
+            </summary>
+            <param name="returnUrl">The Url to return after login</param>
+            <param name="generateState">By default false. If true, it generates a random OAuth State to be used in the returned objects</param>
+            <returns>A list of ExternalLoginView with the Provider, Response_Type, Client_Id, Redirect_Uri and State fields</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.AddExternalLogin(Domain.Data.Identity.AddExternalLoginModel)">
+            <summary>
+            Adds a new external login for a given user
+            </summary>
+            <param name="model">Provides a token with the external login</param>
+            <returns>HTTP Code with result of the operation. 200 if successful</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.RemoveLogin(Domain.Data.Identity.RemoveLoginModel)">
+             <summary>
+             Removes a login provider from a user
+            </summary>
+            <param name="model"></param>
+            <returns>HTTP Code with result of the operation. 200 if successful</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.CheckIfExternalUserExists">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.RememberMe(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.UpdateRegistrationWithPreregistion(Domain.Data.Identity.RegisterModel)">
+            <summary>
+            Register an user contained in the RegisterBindingModel provided
+            </summary>
+            <param name="model">An object of the kind RegisterBindingModel</param>
+            <returns>An HTTP Code:
+                        200: Registered if the user has been registered successfully 
+                        or Http Error Code if not registered</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.CheckUsername(System.String)">
+            <summary>
+            Function to check if the user name is valid
+            </summary>
+            <param name="name">User name to check</param>
+            <returns>Ok if the username is valid</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.UpdateRegistrationWithExternalProvider(Domain.Data.Identity.RegisterModel)">
+            <summary>
+            This method is used when a user registers from an external provider, the main difference being the required authorization, and removal of the RegisterUser method.
+            </summary>
+            <param name="model">The model to map to the ApplicationUser</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.Register(Domain.Data.Identity.RegisterModel)">
+            <summary>
+            Register an user contained in the RegisterViewModel provided
+            </summary>
+            <param name="model">An object of the kind RegisterBindingModel</param>
+            <returns>An HTTP Code:
+                        200: Registered if the user has been registered successfully 
+                        or Http Error Code if not registered</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.DeleteUser(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.GetProfile">
+            <summary>
+            Gets the profile data of the current user. If the current user is not found,returns a 204 (NotFound)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.EditProfile(Domain.Data.Identity.RegisterModel)">
+            <summary>
+            Updates the profile sent in the body
+            </summary>
+            <param name="model">Content of the profile to update</param>
+            <returns>IHttpActionResult</returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.GetProfile(System.String)">
+            <summary>
+            Gets the profile of a user
+            </summary>
+            <param name="username">The user name to get his profile</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.PutProfile(System.String,Domain.Data.Identity.RegisterModel)">
+            <summary>
+            Updates a profile
+            </summary>
+            <param name="id">The username's id to update his profile</param>
+            <param name="model">The object with the user profile</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserProfileController.AddUserToRole(System.String,System.String)">
+            <summary>
+            Adds a user to a role
+            </summary>
+            <param name="userId">The Id of the User</param>
+            <param name="role">The role</param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Controllers.UsersController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.UsersController.GetProfiles">
+            <summary>
+            Returns the complete list of users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UsersController.GetUserProfile(System.String)">
+            <summary>
+            Returns the complete list of users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UsersController.GetUserProfileByName(System.String)">
+            <summary>
+            Returns a user by his name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UsersController.AddUser(Domain.Data.Identity.RegisterModel)">
+            <summary>
+            Adds a new user
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UsersController.UpdateUser(System.String,Domain.Data.Identity.ApplicationUser)">
+            <summary>
+            Adds a new user
+            </summary>
+            <param name="userId"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UsersController.DeleteUser(System.String)">
+            <summary>
+            Deletes an existing user
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UsersController.SetToSuper(System.String)">
+            <summary>
+            Sets a user as SuperAdmin
+            </summary>
+            <param name="userId">The Id of the user</param>
+            <returns>The user object updated</returns>
+        </member>
+        <member name="M:Api.Controllers.UsersController.SetToNormal(System.String)">
+            <summary>
+            Removes a user from the super admin group
+            </summary>
+            <param name="userId">The Id of the user</param>
+            <returns>The user object updated</returns>
+        </member>
+        <member name="M:Api.Controllers.UsersController.ChangePassword(System.String,Domain.Data.Identity.ChangePasswordModel)">
+            <summary>
+            Changes a user password
+            </summary>
+            <param name="userId"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UsersController.SetPassword(System.String,Domain.Data.Identity.SetPasswordModel)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.WebApiApplication">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.WebApiApplication.Application_Start">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Api.Results.ChallengeResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Results.ChallengeResult.#ctor(System.String,System.Web.Http.ApiController)">
+            <summary>
+            
+            </summary>
+            <param name="loginProvider"></param>
+            <param name="controller"></param>
+        </member>
+        <member name="P:Api.Results.ChallengeResult.LoginProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Results.ChallengeResult.Request">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Results.ChallengeResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

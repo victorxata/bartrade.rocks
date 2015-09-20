@@ -1,0 +1,22 @@
+﻿@using System.Reflection
+@using System.Web.Hosting
+@{
+    ViewBag.Title = "API Home Page";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Bartrade.rocks</h3>
+        @{
+            var path = HostingEnvironment.ApplicationPhysicalPath;
+            var assembly = Assembly.LoadFrom(path + "bin\\Api.dll");
+            var ver = assembly.GetName().Version;
+        }
+
+        <h1>@ver</h1>
+    </div>
+    <div class="panel-body">
+        <p>Content.</p>
+
+    </div>
+</div>
